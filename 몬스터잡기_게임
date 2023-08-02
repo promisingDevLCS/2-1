@@ -29,23 +29,23 @@ class Monster {
 }
 
 public class miniP13W extends JFrame implements MouseListener{
-	JPanel p1;	// ±×¸²°ú ¸¶¿ì½º ÀÌº¥Æ® Ã³¸®¸¦ À§ÇÑ ÆĞ³Î
+	JPanel p1;	// ê·¸ë¦¼ê³¼ ë§ˆìš°ìŠ¤ ì´ë²¤íŠ¸ ì²˜ë¦¬ë¥¼ ìœ„í•œ íŒ¨ë„
 	Image img;
 	Timer timer;
 	
-	int x, y;	// ¸ó½ºÅÍÀÇ À§Ä¡ ÁÂÇ¥
-	int idx;	// ¸ó½ºÅÍ¸¦ Å¬¸¯ ½Ã ¾ø¾Ù ¶§ »ç¿ëÇÒ ÀÎµ¦½º ¹øÈ£
-	int sum;	// Á¡¼ö
-	double time = 20;	// Á¦ÇÑ½Ã°£
+	int x, y;	// ëª¬ìŠ¤í„°ì˜ ìœ„ì¹˜ ì¢Œí‘œ
+	int idx;	// ëª¬ìŠ¤í„°ë¥¼ í´ë¦­ ì‹œ ì—†ì•¨ ë•Œ ì‚¬ìš©í•  ì¸ë±ìŠ¤ ë²ˆí˜¸
+	int sum;	// ì ìˆ˜
+	double time = 20;	// ì œí•œì‹œê°„
 	ArrayList<Monster> Mlist = new ArrayList<>();
 
 	public miniP13W() {
-		setTitle("¸ó½ºÅÍ Àâ±â °ÔÀÓ");
+		setTitle("ëª¬ìŠ¤í„° ì¡ê¸° ê²Œì„");
 		setSize(800, 400);
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		for (int i = 0; i < 10; i++) { // arraylist¿¡ monster °´Ã¼ ÀúÀå
+		for (int i = 0; i < 10; i++) { // arraylistì— monster ê°ì²´ ì €ì¥
 			x = (int) (Math.random() * 700);
 			y = (int) (Math.random() * 200);
 			Mlist.add(new Monster(x, y, 100));
@@ -57,11 +57,11 @@ public class miniP13W extends JFrame implements MouseListener{
 		timer = new Timer(2000, new ActionListener() {	// 1s = 1000ms
 			public void update() {
 				if(time == 0) {
-					System.out.println("ÃÖÁ¾ Á¡¼ö: "+ sum);
+					System.out.println("ìµœì¢… ì ìˆ˜: "+ sum);
 					System.exit(1);
 				}
 				time = time-2.5;
-				for (int i = 0; i < Mlist.size(); i++) { // arraylist¿¡ monster °´Ã¼ ÀúÀå
+				for (int i = 0; i < Mlist.size(); i++) { // arraylistì— monster ê°ì²´ ì €ì¥
 					x = (int) (Math.random() * 700);
 					y = (int) (Math.random() * 200);
 					Mlist.get(i).x = x; Mlist.get(i).y = y;
@@ -93,16 +93,16 @@ public class miniP13W extends JFrame implements MouseListener{
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
 		if(Mlist.size()==0) {
-			System.out.println("ÃÖÁ¾ Á¡¼ö: "+ sum);
+			System.out.println("ìµœì¢… ì ìˆ˜: "+ sum);
 			System.exit(1);
 		}
 		
-		for(int i=0;i<Mlist.size();i++) {	// Ãæµ¹ °¨Áö
+		for(int i=0;i<Mlist.size();i++) {	// ì¶©ëŒ ê°ì§€
 			if(e.getX()>=Mlist.get(i).x && e.getX() <=Mlist.get(i).x+50 &&
 					e.getY()>=Mlist.get(i).y && e.getY() <=Mlist.get(i).y+55) {
-				Mlist.remove(i);			// Ãæµ¹µÈ ÀÎµ¦½º »èÁ¦
+				Mlist.remove(i);			// ì¶©ëŒëœ ì¸ë±ìŠ¤ ì‚­ì œ
 				sum++;
-				System.out.println("Á¡¼ö: "+ sum);
+				System.out.println("ì ìˆ˜: "+ sum);
 				repaint();
 			}
 		}
