@@ -20,9 +20,9 @@ public class java11W extends JFrame implements ActionListener {
 		
 		for(int i=0; i<3; i++) {
 			for(int k=0; k<3; k++) {
-				// °¢°¢ÀÇ ÀÎµ¦½º ¸¶´Ù °´Ã¼¸¦ »ý¼º
+				// ê°ê°ì˜ ì¸ë±ìŠ¤ ë§ˆë‹¤ ê°ì²´ë¥¼ ìƒì„±
 				buttons[i][k] = new JButton(labels[index]);
-				// ÀÌº¥Æ® Ã³¸®¸¦ ÀÌ Å¬·¡½º ¾È¿¡¼­ ÇØ°á
+				// ì´ë²¤íŠ¸ ì²˜ë¦¬ë¥¼ ì´ í´ëž˜ìŠ¤ ì•ˆì—ì„œ í•´ê²°
 				buttons[i][k].addActionListener(this); 
 				panel.add(buttons[i][k]);
 				index++;
@@ -54,30 +54,30 @@ public class java11W extends JFrame implements ActionListener {
 			}
 		}
 		for(int i=0; i<3; i++) {
-			// °¡·ÎÁÙ È®ÀÎ
+			// ê°€ë¡œì¤„ í™•ì¸
 			if(buttons[i][0].getText().equals(buttons[i][1].getText()) &&
 					buttons[i][0].getText().equals(buttons[i][2].getText())) {
 				if(buttons[i][0].getText().equals(" ")== true)
 					continue;
-				System.out.println(buttons[i][0].getText()+"°¡ ÀÌ°å½À´Ï´Ù!");
+				System.out.println(buttons[i][0].getText()+"ê°€ ì´ê²¼ìŠµë‹ˆë‹¤!");
 				//System.exit(1);
 			}
-			// ¼¼·ÎÁÙ È®ÀÎ
+			// ì„¸ë¡œì¤„ í™•ì¸
 			else if(buttons[0][i].getText().equals(buttons[1][i].getText()) &&
 					buttons[0][i].getText().equals(buttons[2][i].getText())) {
 				if(buttons[0][i].getText().equals(" ")== true)
 					continue;
-				System.out.println(buttons[0][i].getText()+"°¡ ÀÌ°å½À´Ï´Ù!");
+				System.out.println(buttons[0][i].getText()+"ê°€ ì´ê²¼ìŠµë‹ˆë‹¤!");
 			}
 		}
-		// ´ë°¢¼± È®ÀÎ
+		// ëŒ€ê°ì„  í™•ì¸
 		if(buttons[0][0].getText().equals(buttons[1][1].getText()) &&
 				buttons[0][0].getText().equals(buttons[2][2].getText())) {
 			if(buttons[0][0].getText().equals(" ")== true) {
 				
 			}
 			else {
-				System.out.println(buttons[0][0].getText()+"°¡ ÀÌ°å½À´Ï´Ù!");	
+				System.out.println(buttons[0][0].getText()+"ê°€ ì´ê²¼ìŠµë‹ˆë‹¤!");	
 			}
 		}
 		if(buttons[0][2].getText().equals(buttons[1][1].getText()) &&
@@ -86,7 +86,7 @@ public class java11W extends JFrame implements ActionListener {
 				
 			}
 			else {
-				System.out.println(buttons[0][2].getText()+"°¡ ÀÌ°å½À´Ï´Ù!");	
+				System.out.println(buttons[0][2].getText()+"ê°€ ì´ê²¼ìŠµë‹ˆë‹¤!");	
 			}
 		}
 	}
